@@ -1,0 +1,13 @@
+server:
+  port: 8761 # 8761是eureka server的默认端口
+eureka:
+  server:
+    enable-self-preservation: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/ #这便是此eureka server的应用注册地址
+    register-with-eureka: false #默认设置下，eureka服务注册中心也会将自己做为客户端尝试注册自己，所以要禁止服务端的注册行为
+    fetchRegistry: false #注册中心的职责是维护实例，不需要去检索服务
+spring:
+  application:
+    name: ms-eureka-server
